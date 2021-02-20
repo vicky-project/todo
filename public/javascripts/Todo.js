@@ -19,6 +19,7 @@ export default class extends AbstractView {
 				data.forEach((key, i)=>{
 					html += `<li data-id="${key.id}" class="todo-item">${key.todo_name}<br><small  style="font-size: 15px">created at: ${new Date(key.created_at).toLocaleString()}</small></li>`
 				})
+				html += `</ul>`
 			} else {
 				html += `<p class="no-todo">Whooaa!! Nothing left todo. Congratulation.</p>`
 			}
