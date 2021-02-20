@@ -1,4 +1,6 @@
-# for development command console
+# HOW TO USE
+
+#for development command console
 
 npm run dev
 
