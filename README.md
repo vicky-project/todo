@@ -2,10 +2,16 @@
 
 We recommended you to install nodemon for development purpose. But if you are not, just choose running for production.
 
-#for development command console
+Before it all following below:
+
+#for installing dependencies
+
+npm install
+
+#for running development
 
 npm run dev
 
-#for production command console
+#for running production
 
 npm run start
