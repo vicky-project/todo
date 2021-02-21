@@ -2,8 +2,9 @@
 exports.up = function(knex) {
   return knex.schema.createTable('todo', tbl=>{
   	tbl.increments()
-  	tbl.string('todo_name')
-  	tbl.timestamps()
+  	tbl.string('title')
+  	tbl.string('description')
+  	tbl.timestamps(true, true)
   })
 };
 

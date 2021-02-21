@@ -1,19 +1,25 @@
 const express = require('express')
-const router = require('./router/router')
 const cors = require('cors')
 
 const app = express()
-const PORT = 3000
+const PORT = process.env.PORT || 3000
 
 // Set up template engine
-app.set('view engine', 'ejs')
+// app.set('view engine', 'ejs')
+app.use(express.json());
+app.use(express.urlencoded({extended: false}));
 
 // static files
 app.use(express.static('./public'))
+app.use('/api', require('./server/api/controller.js'))
 app.use(cors())
 
-// Fire Router
-app.use(router)
+// Fire Api
+
+// 404 handler
+app.get('*', (req, res) => {
+  res.sendFile(__dirname + '/public/404.html');
+})
 
 // listen to port
 app.listen(PORT, ()=>{

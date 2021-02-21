@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Todo</title>
+	<link rel="stylesheet" href="/css/bootstrap.min.css">
+	<style>
+	  .toast-wrapper {
+	    position: fixed;
+	    width: 100%;
+	    top: 20px;
+	  }
+	  .toast {
+	    padding: 20px;
+	    color: white;
+	    background: #ff0062;
+	    border-radius: 10px;
+	    box-shadow: 1px 3px 5px rgba(0,0,0,0.2);
+	    max-width: 400px;
+	    margin: 0 auto;
+	  }
+		/*Enter classes*/
+	  .toast-enter-active {
+	    /*transition: all .3s ease;*/
+	    animation: wobble .5s ease;
+	  }
+	  /*Leave classes*/
+	  .toast-leave-from {
+	    opacity: 1;
+	    transform: translateY(0);
+	  }
+	  .toast-leave-to {
+	    opacity: 0;
+	    transform: translateY(-60px);
+	  }
+	  .toast-leave-active {
+	    transition: all .3s ease;
+	  }
+
+
+	  @keyframes wobble {
+	    0% {transform: translateY(-60px);opacity: 0}
+	    50% {transform: translateY(0px);opacity: 1}
+	    60% {transform: translateX(8px);}
+	    70% {transform: translateX(-8px);}
+	    80% {transform: translateX(4px);}
+	    90% {transform: translateX(-4px);}
+	    100% {transform: translateX(0px);}
+	  }
+	</style>
+</head>
+<body>
+	<div id="app">Loading...</div>
+	<!-- <script type="module" src="/javascripts/main.js"></script> -->
+	<script type="module" src="/javascripts/vue.js"></script>
+</body>
+</html>

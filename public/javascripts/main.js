@@ -32,7 +32,6 @@ const router = async () => {
 
 	document.querySelector("#app").innerHTML = await view.getHtml()
 	view.checkDom()
-	// console.log(match.route.view())
 }
 
 window.addEventListener("popstate", router)
@@ -50,13 +49,12 @@ document.addEventListener("DOMContentLoaded", () => {
       fetch(`/api/todo/${item}`, {
         method: 'DELETE',
         headers: {
-        'Content-Type': 'application/json'
-      },
+	        'Content-Type': 'application/json'
+	      },
       }).then(res=>res.json()).then(data=>{
         e.target.remove()
         toast("Berhasil menghapus 1 item")
         let todoEl = document.getElementById("todo-list")
-        // console.log(todoEl)
         if(todoEl.children.length === 0) {
         	document.querySelector('.todo-list').innerHTML = `<p class="no-todo">Whooaa!! Nothing left todo. Congratulation.</p>`
         }

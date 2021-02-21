@@ -7,12 +7,12 @@ export default class extends AbstractView {
 	}
 
 	async getHtml() {
-		const html = await fetch('../views/todo.html').then(res=>res.text())
+		const html = await fetch('/views/todo.html').then(res=>res.text())
 		return await html
 	}
 
 	async checkDom() {
-		const data = await fetch('/api/todo').then(res=>res.json()).then(data=>{
+		const data = await fetch('/api/read').then(res=>res.json()).then(data=>{
 			let html = ''
 			if(data.length > 0) {
 				html += `<ul id="todo-list">`
